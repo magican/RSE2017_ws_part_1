@@ -1,66 +1,111 @@
-\documentclass{report}
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+% sw    SPACE WEATHER
+% ms    JAMES
+%
+%
+%
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below.)
+\documentclass[draft,grl]{agutex}
+%\documentclass[grl]{agutex}
 
-\usepackage{geometry}	% Для последующего задания полей
-\geometry{a4paper,top=2cm,bottom=2cm,left=2.5cm,right=1cm}
+% To activate the commands, uncomment \usepackage{lineno}
+% and \linenumbers*[1]command, below:
 
-%%% Использовать другой интервал %%%
-\renewcommand{\baselinestretch}{1.25}
+\usepackage{lineno}
+\linenumbers*[1]
 
-\usepackage[english]{babel}	% Языки: русский, английский
+%  To add line numbers to lines with equations:
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
 
-%%% Математические пакеты %%%
-\usepackage{amsmath}
-%\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd} % Математические дополнения от AMS
-
-%%% Оформление абзацев %%%
-\usepackage{indentfirst} % Красная строка
-
-%%% Цвета %%%
-\usepackage[usenames]{color}
-\usepackage{color}
-\usepackage{colortbl}
-
-%%% Таблицы %%%
-\usepackage{longtable}					% Длинные таблицы
-\usepackage{multirow,makecell,array}	% Улучшенное форматирование таблиц
-
-%%% Общее форматирование
-% Корректируем подписи
-\RequirePackage{caption}
-\DeclareCaptionLabelSeparator{defffis}{ -- }
-\captionsetup{justification=centering,labelsep=defffis}
-\usepackage{soul}	% Поддержка переносоустойчивых подчёркиваний и зачёркиваний
-
-%%% Библиография %%%
-%\usepackage{cite} 	% Красивые ссылки на литературу
-%\usepackage[square, numbers]{natbib} % also change to ugost2008n in styles.tex
-\usepackage[square]{natbib}
-
-%%% Изображения %%%
-\usepackage{graphicx} % Подключаем пакет работы с графикой
-
-
-%%% Tries harder figure positioning \begin{figure}[H] %%%
-\usepackage{float}
-
-%%%% allows to con­vert eps images to pdf for use with pdfla­tex
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
 \usepackage{epstopdf}
+%  Uncomment the following command to allow illustrations to print
+%   when using Draft:
+\setkeys{Gin}{draft=false}
 
-%%% Гиперссылки %%%
-\usepackage[linktocpage=true,
-			plainpages=false,
-			pdfpagelabels=false,
-        	colorlinks=true]{hyperref}
+%% ------------------------------------------------------------------------ %%
+%
+%  ENTER PREAMBLE
+%
+%% ------------------------------------------------------------------------ %%
 
+% Author names in capital letters:
+\authorrunninghead{MYASOEDOV ET AL.}
 
+% Shorter version of title entered in capital letters:
+\titlerunninghead{SUNGLINT IMAGERY OF THE IW}
+
+%Corresponding author mailing address and e-mail address:
+\authoraddr{Corresponding author: A. G. Myasoedov,
+Satellite Oceanography Laboratoty, Russian State Hydrometeorological University, Malookhtinsky prospect 98, Saint-Petersburg, 195196, Russia.
+(alexander.myasoedov@gmail.com)}
 
 \begin{document}
 
-SUNGLINT IMAGERY FOR INVESTIGATING OCEANIC INTERNAL WAVES
+%% ------------------------------------------------------------------------ %%
+%
+%  TITLE
+%
+%% ------------------------------------------------------------------------ %%
 
-\section{Abstract}
+
+\title{SUNGLINT IMAGERY FOR INVESTIGATING OCEANIC INTERNAL WAVES}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+\authors{
+Alexander Myasoedov,\altaffilmark{1}
+Vladimir Kudryavtsev,\altaffilmark{1}
+Bertrand Chapron,\altaffilmark{1,2}
+}
+
+\altaffiltext{1}{Satellite Oceanography Laboratoty, Russian State Hydrometeorological University, Saint-Petersburg, Russia.}
+
+\altaffiltext{2}{Institute Francais de Recherche pour l'Exploitation de la Mer, Plouzané, France.}
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+%% ------------------------------------------------------------------------ %%
+
+\begin{abstract}
 
 A method for retrieval of the spatial variations of the sea surface mean square slope (MSS) in sunglint imagery is applied for analysis of surface signatures of the internal waves. It is shown that internal waves are well visible via modulations of the sea surface MSS, enhancement/suppression of the MSS takes place in the zones of IW-induced surface current convergence/divergence. The results clearly demonstrate a highly feasible approach for investigation of the Ocean internal waves surface signatures.
+
+\end{abstract}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  BEGIN ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+\begin{article}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
 
 
 \section{Introduction}
@@ -74,12 +119,12 @@ The main goal of the present study is to demonstrate the possibilities of satell
 
 \section{Methodology and approach}
 
-The algorithm for the sea surface MSS retrieval was first suggested by Myasoedov et al. in \cite{Myasoedov2010a} and further developed by the authors in \citep{Kudryavtsev2012a} and \citep{Kudryavtsev2012b}. The method is based on the idea that sunglint brightness depends on statistical properties of the sea surface slopes, - its MSS, skewness, peakedness etc. Cox and Munk \cite{Cox1954} derived these parameters from analysis of the sunglint shape, i.e. the derived parameters are were averaged over the sunglint width. The algorithm suggested in \citep{Kudryavtsev2012a} is focused on retrieval of ``small-scale'' (on scales which are much smaller than the sunglint width) MSS variations $\tilde{s^2}$ from the sunglint brightness variations $\tilde{B}$. The advantage of the algorithm is that it does not require an \textit{a priori} speculations about the PDF model, and the transfer function (relating brightness variations to MSS one) is found from the mean brightness field where the ``real'' PDF is explicitly built in.
+The algorithm for the sea surface MSS retrieval was first suggested by \cite{Myasoedov2010a} and further developed by the authors in \citep{Kudryavtsev2012a} and \citep{Kudryavtsev2012b}. The method is based on the idea that sunglint brightness depends on statistical properties of the sea surface slopes, - its MSS, skewness, peakedness etc. Cox and Munk \cite{Cox1954} derived these parameters from analysis of the sunglint shape, i.e. the derived parameters are were averaged over the sunglint width. The algorithm suggested in \citep{Kudryavtsev2012a} is focused on retrieval of ``small-scale'' (on scales which are much smaller than the sunglint width) MSS variations $\tilde{s^2}$ from the sunglint brightness variations $\tilde{B}$. The advantage of the algorithm is that it does not require an \textit{a priori} speculations about the PDF model, and the transfer function (relating brightness variations to MSS one) is found from the mean brightness field where the ``real'' PDF is explicitly built in.
 
 
 \section{Study area and data}
 
-The study is focused on optical MODIS and synthetic aperture radar (SAR) ASAR imagery around the coastal area of the North-East shelf of South America. The western equatorial Atlantic region facing the mouth of the Amazon River is an area with very complex ocean dynamics \citep{Silva2010}, in addition forced by Trade Winds \citep{Augustinus2004} plays an important role in the inter-hemispheric salt, heat and mass transfer \citep{Dengler2004, Schmitz1993}. Moreover the region is characterized by strong tidal currents \citep{Oltman1968, RockwellGeyer1996, LeBars2010} and regular occurrences of very intensive solitary and trains of internal waves (IWs) generated by semidiurnal tide \citep{Burdyugov1987, Ivanov1993}. Early field campaigns targeting IWs and their impact on wind waves breaking in this area were reported by Dulov et al. \cite{Dulov1986}  and Burdyugov et al. \cite{Burdyugov1987}. They found that during the peak generation, ``amplitude'' of the solitary IWs was about 100\textit{m}, and that passage of the IW (travelling to the N-E direction, opposite to the wind) caused strong impact on the wind wave breaking.  Occurrences of breaking waves were strongly enhanced (several times relative to the background value) when the thermocline was deepening, and significantly suppressed (almost disappearing) when the thermocline was rising. Such wave breaking enhancement/suppression has strong correlation with convergence/divergence of the currents induced by the IW on the surface.
+The study is focused on optical MODIS and synthetic aperture radar (SAR) ASAR imagery around the coastal area of the North-East shelf of South America. The western equatorial Atlantic region facing the mouth of the Amazon River is an area with very complex ocean dynamics \citep{Silva2010}, in addition forced by Trade Winds \citep{Augustinus2004} plays an important role in the inter-hemispheric salt, heat and mass transfer \citep{Dengler2004, Schmitz1993}. Moreover the region is characterized by strong tidal currents \citep{Oltman1968, RockwellGeyer1996, LeBars2010} and regular occurrences of very intensive solitary and trains of internal waves (IWs) generated by semidiurnal tide \citep{Burdyugov1987, Ivanov1993}. Early field campaigns targeting IWs and their impact on wind waves breaking in this area were reported by \cite{Dulov1986}  and \cite{Burdyugov1987}. They found that during the peak generation, ``amplitude'' of the solitary IWs was about 100\textit{m}, and that passage of the IW (travelling to the N-E direction, opposite to the wind) caused strong impact on the wind wave breaking.  Occurrences of breaking waves were strongly enhanced (several times relative to the background value) when the thermocline was deepening, and significantly suppressed (almost disappearing) when the thermocline was rising. Such wave breaking enhancement/suppression has strong correlation with convergence/divergence of the currents induced by the IW on the surface.
 
 The MODIS/Aqua image of this area in red channel (850\textit{nm}) on April 26, 2009, 16:20 is shown in Figure~\ref{fig:1} (upper left plot). Clouds mask the full view of the surface. However, the sunglint with linear brightness features inside (which may be treated as the surface signatures of the IWs) are easily recognized.
 
@@ -118,12 +163,81 @@ An algorithm for the retrieval of the spatial variations of the MSS in sunglint 
 Nevertheless the method clearly suggests an additional opportunity for investigation of surface signature of ocean features, including mesoscale ocean current fronts, eddies and IWs. Synergistic analysis of the MSS (derived from optical sensors) and SAR surface signatures will therefore lead to better quantitative understanding of the dynamics and wave-current interactions that dominate the manifestation of such features.
 
 
-\section{Acknowledgments}
+\begin{acknowledgments}
 
 Core support for this study was provided by Mega-grant of the Russian Federation Government to support scientific research under the supervision of leading scientist at RSHU, No. 11.G34.31.0078.
 
+\end{acknowledgments}
+
+
+%% ------------------------------------------------------------------------ %%
+%%  REFERENCE LIST AND TEXT CITATIONS
+%
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% Or,
+%
+% If you use BiBTeX for your references, please use the agufull08.bst file (available at % ftp://ftp.agu.org/journals/latex/journals/Manuscript-Preparation/) to produce your .bbl
+% file and copy the contents into your paper here.
+%
+% Follow these steps:
+% 1. Run LaTeX on your LaTeX file.
+%
+% 2. Make sure the bibliography style appears as \bibliographystyle{agufull08}. Run BiBTeX on your LaTeX
+% file.
+%
+% 3. Open the new .bbl file containing the reference list and
+%   copy all the contents into your LaTeX file here.
+%
+% 4. Comment out the old \bibliographystyle and \bibliography commands.
+%
+% 5. Run LaTeX on your new file before submitting.
+%
+% AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
 \bibliographystyle{./agufull08}
 \bibliography{./myasoedov_grl2013}
+
+%\begin{thebibliography}{}%
+
+%\providecommand{\natexlab}[1]{#1}
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+%  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+%  \urlstyle{rm}\Url}\fi
+%
+%\bibitem[{\textit{Atkinson and Sloan}(1991)}]{AtkinsonSloan}
+%Atkinson, K., and I.~Sloan (1991), The numerical solution of first-kind
+%  logarithmic-kernel integral equations on smooth open arcs, \textit{Math.
+%  Comp.}, \textit{56}(193), 119--139.
+%
+%\bibitem[{\textit{Colton and Kress}(1983)}]{ColtonKress1}
+%Colton, D., and R.~Kress (1983), \textit{Integral Equation Methods in
+%  Scattering Theory}, John Wiley, New York.
+%
+%\bibitem[{\textit{Hsiao et~al.}(1991)\textit{Hsiao, Stephan, and
+%  Wendland}}]{StephanHsiao}
+%Hsiao, G.~C., E.~P. Stephan, and W.~L. Wendland (1991), On the {D}irichlet
+%  problem in elasticity for a domain exterior to an arc, \textit{J. Comput.
+%  Appl. Math.}, \textit{34}(1), 1--19.
+%
+%\bibitem[{\textit{Lu and Ando}(2012)}]{LuAndo}
+%Lu, P., and M.~Ando (2012), Difference of scattering geometrical optics
+%  components and line integrals of currents in modified edge representation,
+%  \textit{Radio Sci.}, \textit{47},  RS3007, \doi{10.1029/2011RS004899}.
+
+%\end{thebibliography}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  END ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+\end{article}
+
 
 \begin{figure}
 \noindent\includegraphics[width=18.5pc]{fig1a}
@@ -133,7 +247,7 @@ Core support for this study was provided by Mega-grant of the Russian Federation
 \noindent\includegraphics[width=20pc]{fig1c}
 \hfill
 \noindent\includegraphics[width=20pc]{fig1d}
-\caption{(upper left)  Fragment of the Aqua/MODIS image (April 26, 2009, 16:20) in red channel 850\textit{nm} of the Amazon Area containing IWs signatures. (upper right) Sunglint brightness variations $\tilde{B}$. (lower left) The transfer function $T$. (lower right) MSS variations retrieved from eq.(5) with (7) in \citep{Kudryavtsev2012a}. White areas are the clouds mask. Line A-B indicate location of the cross-section shown in Fig.~\ref{fig:2}.}
+\caption{(upper left)  Fragment of the Aqua/MODIS image (April 26, 2009, 16:20) in red channel 850\textit{nm} of the Amazon Area containing IWs signatures. (upper right) Sunglint brightness variations $\tilde{B}$. (lower left) The transfer function $T$. (lower right) MSS variations retrieved from eq. (5) with (7) in \citep{Kudryavtsev2012a}. White areas are the clouds mask. Line A-B indicates location of the cross-section shown in Fig.~\ref{fig:2}.}
 \label{fig:1}
 \end{figure}
 
