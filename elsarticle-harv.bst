@@ -1,7 +1,7 @@
 %%
-%% This is file `model2-names.bst'  (Version 2.0),
+%% This is file `elsarticle-harv.bst'  (Version 2.0),
 %% 
-%% Copyright 2009-2013 Elsevier Ltd
+%% Copyright 2009-2012 Elsevier Ltd
 %% 
 %% This file is part of the 'Elsarticle Bundle'.
 %% ---------------------------------------------
@@ -13,9 +13,9 @@
 %% and version 1.2 or later is part of all distributions of LaTeX
 %% version 1999/12/01 or later.
 %%
-%% $Id: model2-names.bst 217 2013-03-13 11:50:49Z rishi $
+%% $Id: elsarticle-harv.bst 55 2012-10-22 09:07:32Z rishi $
 %%
-%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/New-Model-2/model2-names.bst $
+%% $URL: http://lenova.river-valley.com/svn/elsarticle/trunk/elsarticle-harv.bst $
 %% 
 
 ENTRY
@@ -330,66 +330,6 @@ MACRO {toois} {"ACM Trans. Office Inf. Syst."}
 MACRO {toplas} {"ACM Trans. Progr. Lang. Syst."}
 
 MACRO {tcs} {"Theor. Comput. Sci."}
-
-%% Begin - Added on March 13, 2013
-
-MACRO {aj} {"Astron. J."} 
-MACRO {actaa} {"Acta Astron."}
-MACRO {araa} {"Annu. Rev. Astron. Astrophys."}
-MACRO {apj}  {"Astrophys. J."}
-MACRO {apjl} {"Astrophys. J. Lett."}
-MACRO {apjs} {"Astrophys. J. Suppl. S"}
-MACRO {ao} {"Appl. Optics"}
-MACRO {apss} {"Astrophys. Space Sci."}
-MACRO {aap} {"Astronom. Astrophys."}
-MACRO {aapr} {"Astron. Astrophys Rev"}
-MACRO {aaps} {"Astron. Astrophys. Sup."}
-MACRO {azh} {"Astron. Zh+"}
-MACRO {caa} {"Chinese Astron. Astr."}
-MACRO {icarus} {"Icarus"}
-MACRO {jcap} {"J. Cosmol. Astropart. Phys."}
-MACRO {jrasc} {"J. Roy. Astron. Soc. Can."}
-MACRO {memras} {"Memoirs of the RAS"}
-MACRO {mnras} {"Mon. Not. R. Astron. Soc."}
-MACRO {na} {"New Astron."}
-MACRO {nar} {"New Astron. Rev."}
-MACRO {pra} {"Phys. Rev. A"}
-MACRO {prb} {"Phys. Rev. B"}
-MACRO {prc} {"Phys. Rev. C"}
-MACRO {prd} {"Phys. Rev. D"}
-MACRO {pre} {"Phys. Rev. E"}
-MACRO {prl} {"Phys. Rev. Lett"}
-MACRO {pasa} {"Publ. Astron. Soc. Aust."}
-MACRO {pasp} {"Publ. Astron. Soc. Pac."}
-MACRO {pasj} {"Publ. Astron. Soc. Jpn."}
-MACRO {rmxaa} {"Rev. Mex. Astron. Astr."}
-MACRO {rjras} {"Q. J. Roy. Astron. Soc."}
-MACRO {skytel} {"Sky Telescope"}
-MACRO {solphys} {"Sol. Phys."}
-MACRO {sovast} {"Sov. Astron."}
-MACRO {ssr} {"Space Sci. Rev."}
-MACRO {zap} {"Zeitschrift fuer Astrophysik"}
-MACRO {nat} {"Nature"}
-MACRO {iaucirc} {"IAU Cirulars"}
-MACRO {gca} {"Geochim. Cosmochim. Ac."}
-MACRO {grl} {"Geophys. Res. Lett."}
-MACRO {jcp} {"J. Chem. Phys."}
-MACRO {jgr} {"J. Geophys. Res."}
-MACRO {jqsrt} {"J. Quant. Spectrosc. RA"}
-MACRO {nphysa} {"Nucl. Phys. A"}
-MACRO {physrep} {"Phys. Rep."}
-MACRO {physscr} {"Phys. Scrip."}
-MACRO {planss} {"Planet. Space Sci."}
-MACRO {baas} {"Bull. Aust. Acoust. Soc"}
-MACRO {aplett} {"Astrophys. Lett."}
-MACRO {procspie} {"Proc. SPIE"}
-MACRO {cjaa} {"Chinese J. Astron. Ast."}
-MACRO {fcp} {"Fundam. Cosm. Phys."}
-MACRO {memsai} {"Mem. Soc. Astron. Ital."}
-MACRO {bain} {"Bull. Astron. Inst. Neth., Suppl. Ser."}
-
-%% End - Added on March 13, 2013
-
 
 FUNCTION {bibinfo.check}
 { swap$
@@ -946,7 +886,7 @@ FUNCTION {print.eprint}
  {eprint duplicate$ empty$
    { pop$ "" }
    { new.sentence
-     duplicate$ "\href{http://arxiv.org/abs/" swap$ * "}{\tt arXiv:" * swap$ * "}" *   }
+     duplicate$ "\href{http://arxiv.org/abs/" swap$ * "}{{\tt arXiv:" * swap$ * "}}" *   }
    if$
  }
 
@@ -1641,7 +1581,7 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `model2-names.bst'.
+%% End of file `elsarticle-harv.bst'.
 %%
 %% Change log:
 %% -----------
